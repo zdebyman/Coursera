@@ -21,10 +21,12 @@ grad = zeros(size(theta));
 %
 
 
+h = sigmoid(X * theta);
+sum1 = sum((((-1) * y) .* log(h)) - ((1 - y) .* log(1 - h)));
+J = (1 / m) * sum1;
 
-
-
-
+grad = ((1 / m) * X)' * (sigmoid(X * theta) - y);
+disp(grad);
 
 
 % =============================================================

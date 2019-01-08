@@ -16,6 +16,9 @@ p = zeros(m, 1);
 %
 
 
+for iter = 1:m
+  p = sigmoid(X * theta) >= 0.5;
+end
 
 
 
