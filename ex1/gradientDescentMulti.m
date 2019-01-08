@@ -7,6 +7,9 @@ function [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
 
+
+featuresCount = size(X, 2);
+
 for iter = 1:num_iters
 
     % ====================== YOUR CODE HERE ======================
@@ -18,14 +21,14 @@ for iter = 1:num_iters
     %
 
 
+    h = (X * theta) .- y;
+    for iter2 = 1:featuresCount
+    
+      sumX = sum(h .* X(:,iter2));
+      
+      theta(iter2,:) = theta(iter2,:) - alpha * (1 / m) * sumX;
 
-
-
-
-
-
-
-
+    end;
 
     % ============================================================
 
