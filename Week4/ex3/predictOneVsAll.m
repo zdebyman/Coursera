@@ -30,27 +30,22 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-disp('X');
+disp('X = ');
 disp(X);
 
 
 disp('');
-
+disp('all_theta = ');
 disp(all_theta);
 disp('');
 
 %for iter = 1:m
-  for j = 1:num_labels
-    disp('');
-    disp(j);
+  for j = 1:m
+    temp = sigmoid(X(j, :) * all_theta');
     
-    disp('all_theta(num_labels, :)');
-    disp(all_theta(num_labels, :));
+    [maxEl, maxIndex] = max(temp);
     
-    disp('temp');
-    temp = sigmoid(X * all_theta(j, :)) >= 0.5;
-    disp(temp)
- 
+    p(j) = maxIndex;
  end
  
 %end
