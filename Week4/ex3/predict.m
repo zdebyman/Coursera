@@ -20,9 +20,23 @@ p = zeros(size(X, 1), 1);
 %       information see 'help max'. If your examples are in rows, then, you
 %       can use max(A, [], 2) to obtain the max for each row.
 %
+disp('x');
+disp(X);
+
+% Add intercept term to x and X_test
+X = [ones(m, 1) X];
 
 
-
+for j = 1:m
+  h = sigmoid(X(j, :) * Theta1');
+  h = [ones(1, 1) h];
+  h = sigmoid(h * Theta2');
+  
+  [maxEl, maxIndex] = max(h);
+  p(j) = maxIndex;
+  disp('');
+  disp('');
+end
 
 
 

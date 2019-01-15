@@ -30,25 +30,11 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-disp('X = ');
-disp(X);
-
-
-disp('');
-disp('all_theta = ');
-disp(all_theta);
-disp('');
-
-%for iter = 1:m
-  for j = 1:m
-    temp = sigmoid(X(j, :) * all_theta');
-    
-    [maxEl, maxIndex] = max(temp);
-    
-    p(j) = maxIndex;
- end
- 
-%end
+for j = 1:m
+  temp = sigmoid(X(j, :) * all_theta');
+  [maxEl, maxIndex] = max(temp);
+  p(j) = maxIndex;
+end
 
 % =========================================================================
 
