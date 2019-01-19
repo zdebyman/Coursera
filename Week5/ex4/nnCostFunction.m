@@ -103,11 +103,10 @@ end
 Theta1_grad = Theta1_grad / m;
 Theta2_grad = Theta2_grad / m;
 t1 = Theta1_grad(:, 1);
-t2 = Theta2_grad(:, 2);
+t2 = Theta2_grad(:, 1);
 
 Theta1_grad = Theta1_grad + ((lambda / m) * Theta1);
 Theta1_grad(:, 1) = t1;
-
 
 Theta2_grad = Theta2_grad + ((lambda / m) * Theta2);
 Theta2_grad(:, 1) = t2;
